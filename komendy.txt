@@ -1,4 +1,8 @@
-
+exit
+\134G
+/g
+/G
+\134g
 show\040database
 \134g
 show\040database;
@@ -17,10 +21,10 @@ SHOW\040TABLES;
 \134G
 CREATE\040DATABASE\040lekcja1
 CREATE\040DATABASE\040lekcja1;
-CREATE\040TABLE\040(id_postaci\040INT\040PRIMARY\040KEY,nazwa\040VARCHAR(40),rodzaj\040ENUM('wiking','ptak','kobieta'),data_ur\040DATE,wiek\040+\040\040INT);
-CREATE\040TABLE\040(id_postaci\040INT\040PRIMARY\040KEY,nazwa\040VARCHAR(40),rodzaj\040ENUM(`wiking`,`ptak`,`kobieta`),data_ur\040DATE,wiek\040+\040\040INT);
-CREATE\040TABLE\040(id_postaci\040INT\040PRIMARY\040KEY\040AUTO_INCREMENT,nazwa\040VARCHAR(40),rodzaj\040ENUM('wiking','ptak','kobieta'),data_ur\040DATE,wiek\040\040INT\040UNSIGNED);
-CREATE\040TABLE\040postac\040(id_postaci\040INT\040PRIMARY\040KEY\040AUTO_INCREMENT,nazwa\040VARCHAR(40),rodzaj\040ENUM('wiking','ptak','kobieta'),data_ur\040DATE,wiek\040\040INT\040UNSIGNED);
+CREATE\040TABLE\040(id_postaci\040INT\040PRIMARY\040KEY,nazwa\040VARCHAR(40),rod                                                                                                                                                             zaj\040ENUM('wiking','ptak','kobieta'),data_ur\040DATE,wiek\040+\040\040INT);
+CREATE\040TABLE\040(id_postaci\040INT\040PRIMARY\040KEY,nazwa\040VARCHAR(40),rod                                                                                                                                                             zaj\040ENUM(`wiking`,`ptak`,`kobieta`),data_ur\040DATE,wiek\040+\040\040INT);
+CREATE\040TABLE\040(id_postaci\040INT\040PRIMARY\040KEY\040AUTO_INCREMENT,nazwa\                                                                                                                                                             040VARCHAR(40),rodzaj\040ENUM('wiking','ptak','kobieta'),data_ur\040DATE,wiek\04                                                                                                                                                             0\040INT\040UNSIGNED);
+CREATE\040TABLE\040postac\040(id_postaci\040INT\040PRIMARY\040KEY\040AUTO_INCREM                                                                                                                                                             ENT,nazwa\040VARCHAR(40),rodzaj\040ENUM('wiking','ptak','kobieta'),data_ur\040DA                                                                                                                                                             TE,wiek\040\040INT\040UNSIGNED);
 DESC\040postac;
 INSTERT\040INTO\040`postac`\040VALUESE\040(Bjorn,wiking,(10,08,700),20);
 INSTERT\040INTO\040`postac`\040VALUESE\040(Bjorn,wiking,10-08-700,20);
@@ -33,24 +37,24 @@ INSERT\040INTO\040`postac`\040VALUES\040(1,'Bjorn',wiking,10-08-700,20);
 INSERT\040INTO\040`postac`\040VALUES\040(1,'Bjorn','wiking','10-08-700','20');
 INSERT\040INTO\040`postac`\040VALUES\040(1,'Bjorn','wiking','700-08-20','20');
 INSERT\040INTO\040`postac`\040VALUES\040(2,'Drozd','ptak','2018-05-15','5');
-INSERT\040INTO\040`postac`\040VALUES\040(3,'Tesciowa','kobieta','1950-02-2','70');
+INSERT\040INTO\040`postac`\040VALUES\040(3,'Tesciowa','kobieta','1950-02-2','70'                                                                                                                                                             );
 select\040*\040from\040`postac`;
 select\040data_ur,wiek\040from\040postac\040where\040\040id=3;\040
 select\040data_ur,wiek\040from\040postac\040where\040\040id_postaci=3;
-update\040postac\040set\040data_ur\040='1932-02-02'\040,\040wiek='88'\040where\040id_postaci\040=\0403;
+update\040postac\040set\040data_ur\040='1932-02-02'\040,\040wiek='88'\040where\0                                                                                                                                                             40id_postaci\040=\0403;
 select\040data_ur,wiek\040from\040postac\040where\040\040id_postaci=3;
-CREATE\040TABLE\040walizka\040(id_walizki\040PRIMARY\040KEY\040AUTO_INCRESMENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),id_wlasciciela\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_postaci`)\040ON\040DELETE\040CASCADE);
-CREATE\040TABLE\040walizka\040(id_walizki\040PRIMARY\040KEY\040AUTO_INCREMENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),id_wlasciciela\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_postaci`)\040ON\040DELETE\040CASCADE);
-CREATE\040TABLE\040walizka\040(id_walizki\040PRIMARY\040KEY\040AUTO_INCREMENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),id_wlasciciela\040int\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_postaci`)\040ON\040DELETE\040CASCADE);
-CREATE\040TABLE\040walizka\040(id_walizki\040PRIMARY\040KEY\040AUTO_INCREMENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),id_wlasciciela\040\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_postaci`)\040ON\040DELETE\040CASCADE);
-CREATE\040TABLE\040walizka\040(id_walizki\040PRIMARY\040KEY\040AUTO_INCREMENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),id_wlasciciela\040int\040\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_postaci`)\040ON\040DELETE\040CASCADE);
-CREATE\040TABLE\040walizka\040(id_walizki\040PRIMARY\040KEY\040AUTO_INCREMENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),id_wlasciciela\040\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_postaci`)\040ON\040DELETE\040CASCADE);
-CREATE\040TABLE\040walizka\040(id_walizki\040int\040PRIMARY\040KEY\040AUTO_INCREMENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),id_wlasciciela\040\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_postaci`)\040ON\040DELETE\040CASCADE);
-CREATE\040TABLE\040walizka\040(id_walizki\040int\040PRIMARY\040KEY\040AUTO_INCREMENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),id_wlasciciela\040int\040\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_postaci`)\040ON\040DELETE\040CASCADE);
-CREATE\040TABLE\040walizka\040(id_walizki\040int\040PRIMARY\040KEY\040AUTO_INCREMENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),id_wlasciciela\040int\040FOREIGN\040KEY(id_postaci)REFERENCES\040postac(id_postaci)\040ON\040DELETE\040CASCADE);
-CREATE\040TABLE\040walizka\040(id_walizki\040int\040PRIMARY\040KEY\040AUTO_INCREMENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),id_wlasciciela\040int,\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_postaci`)\040ON\040DELETE\040CASCADE);
-CREATE\040TABLE\040walizka\040(id_walizki\040int\040PRIMARY\040KEY\040AUTO_INCREMENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),id_wlasciciela\040int,\040FOREIGN\040KEY(id_postaci)REFERENCES\040postac(id_postaci)\040ON\040DELETE\040CASCADE);
-CREATE\040TABLE\040walizka\040(id_walizki\040int\040PRIMARY\040KEY\040AUTO_INCREMENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),id_wlasciciela\040int,\040FOREIGN\040KEY(id_wlasciciela)REFERENCES\040postac(id_postaci)\040ON\040DELETE\040CASCADE);
+CREATE\040TABLE\040walizka\040(id_walizki\040PRIMARY\040KEY\040AUTO_INCRESMENT,p                                                                                                                                                             ojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty')                                                                                                                                                             ,id_wlasciciela\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_postaci`                                                                                                                                                             )\040ON\040DELETE\040CASCADE);
+CREATE\040TABLE\040walizka\040(id_walizki\040PRIMARY\040KEY\040AUTO_INCREMENT,po                                                                                                                                                             jemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),                                                                                                                                                             id_wlasciciela\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_postaci`)                                                                                                                                                             \040ON\040DELETE\040CASCADE);
+CREATE\040TABLE\040walizka\040(id_walizki\040PRIMARY\040KEY\040AUTO_INCREMENT,po                                                                                                                                                             jemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),                                                                                                                                                             id_wlasciciela\040int\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_po                                                                                                                                                             staci`)\040ON\040DELETE\040CASCADE);
+CREATE\040TABLE\040walizka\040(id_walizki\040PRIMARY\040KEY\040AUTO_INCREMENT,po                                                                                                                                                             jemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),                                                                                                                                                             id_wlasciciela\040\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_posta                                                                                                                                                             ci`)\040ON\040DELETE\040CASCADE);
+CREATE\040TABLE\040walizka\040(id_walizki\040PRIMARY\040KEY\040AUTO_INCREMENT,po                                                                                                                                                             jemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),                                                                                                                                                             id_wlasciciela\040int\040\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`i                                                                                                                                                             d_postaci`)\040ON\040DELETE\040CASCADE);
+CREATE\040TABLE\040walizka\040(id_walizki\040PRIMARY\040KEY\040AUTO_INCREMENT,po                                                                                                                                                             jemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','zolty'),                                                                                                                                                             id_wlasciciela\040\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`id_posta                                                                                                                                                             ci`)\040ON\040DELETE\040CASCADE);
+CREATE\040TABLE\040walizka\040(id_walizki\040int\040PRIMARY\040KEY\040AUTO_INCRE                                                                                                                                                             MENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','z                                                                                                                                                             olty'),id_wlasciciela\040\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040postac(`i                                                                                                                                                             d_postaci`)\040ON\040DELETE\040CASCADE);
+CREATE\040TABLE\040walizka\040(id_walizki\040int\040PRIMARY\040KEY\040AUTO_INCRE                                                                                                                                                             MENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','z                                                                                                                                                             olty'),id_wlasciciela\040int\040\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040po                                                                                                                                                             stac(`id_postaci`)\040ON\040DELETE\040CASCADE);
+CREATE\040TABLE\040walizka\040(id_walizki\040int\040PRIMARY\040KEY\040AUTO_INCRE                                                                                                                                                             MENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','z                                                                                                                                                             olty'),id_wlasciciela\040int\040FOREIGN\040KEY(id_postaci)REFERENCES\040postac(i                                                                                                                                                             d_postaci)\040ON\040DELETE\040CASCADE);
+CREATE\040TABLE\040walizka\040(id_walizki\040int\040PRIMARY\040KEY\040AUTO_INCRE                                                                                                                                                             MENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','z                                                                                                                                                             olty'),id_wlasciciela\040int,\040FOREIGN\040KEY(`id_postaci`)REFERENCES\040posta                                                                                                                                                             c(`id_postaci`)\040ON\040DELETE\040CASCADE);
+CREATE\040TABLE\040walizka\040(id_walizki\040int\040PRIMARY\040KEY\040AUTO_INCRE                                                                                                                                                             MENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','z                                                                                                                                                             olty'),id_wlasciciela\040int,\040FOREIGN\040KEY(id_postaci)REFERENCES\040postac(                                                                                                                                                             id_postaci)\040ON\040DELETE\040CASCADE);
+CREATE\040TABLE\040walizka\040(id_walizki\040int\040PRIMARY\040KEY\040AUTO_INCRE                                                                                                                                                             MENT,pojemnosc\040INT\040UNSIGNED,kolor\040ENUM('rozowy','czerwony','teczowy','z                                                                                                                                                             olty'),id_wlasciciela\040int,\040FOREIGN\040KEY(id_wlasciciela)REFERENCES\040pos                                                                                                                                                             tac(id_postaci)\040ON\040DELETE\040CASCADE);
 Show\040databases;
 use\040churas
 show\040tables;
@@ -58,24 +62,24 @@ ALTER\040TABLE\040`walizka`\040ALTER\040`kolor`\040SET\040DEFAULT\040'rozowy';
 INSERT\040INTO\040`walizka`\040VALUES\040(1,20,'czerwony',1);
 INSERT\040INTO\040`walizka`\040VALUES\040(2,15,'zolty',3);
 SELECT\040*\040FROM\040`walizka`;
-CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040varchar\040\040PRIMARY\040KEY,metraz\040int\040unsigned,wlasciciel\040int,FOREIGN\040KEY\040id_wlasciciela\040REFERENCES\040postac(id_postaci));
-CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040varchar\040\040PRIMARY\040KEY,metraz\040int\040UNSIGNED,wlasciciel\040int,FOREIGN\040KEY\040id_wlasciciel\040REFERENCES\040postac(`id_postaci`));
-CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040varchar\040\040PRIMARY\040KEY,metraz\040int\040UNSIGNED,wlasciciel\040int,FOREIGN\040KEY\040wlasciciel\040REFERENCES\040postac(id_postaci));
-CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040varchar\040\040PRIMARY\040KEY,metraz\040int\040UNSIGNED,wlasciciel\040int,FOREIGN\040KEY(wlasciciel)\040REFERENCES\040postac(id_postaci));
-CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040varchar\040\040PRIMARY\040KEY,metraz\040int\040UNSIGNED,wlasciciel\040int,FOREIGN\040KEY(`wlasciciel`)\040REFERENCES\040postac(`id_postaci`));
-CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040varchar\040\040PRIMARY\040KEY,metraz\040int\040UNSIGNED,wlasciciel\040int,FOREIGN\040KEY(wlasciciel)\040REFERENCES\040postac(id_postaci));
-CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040varchar\040\040PRIMARY\040KEY,\040metraz\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY(wlasciciel)\040REFERENCES\040postac(id_postaci));
-CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metraz\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY(wlasciciel)\040REFERENCES\040postac(id_postaci),\040primary\040key(adres_budynku,\040nazwa_izby));
-CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metraz\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY(`wlasciciel`)\040REFERENCES\040postac(`id_postaci`),\040primary\040key(adres_budynku,\040nazwa_izby));
-CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metraz\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY\040(wlasciciel)\040REFERENCES\040postac\040(id_postaci),\040primary\040key(adres_budynku,\040nazwa_izby));
+CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040var                                                                                                                                                             char\040\040PRIMARY\040KEY,metraz\040int\040unsigned,wlasciciel\040int,FOREIGN\0                                                                                                                                                             40KEY\040id_wlasciciela\040REFERENCES\040postac(id_postaci));
+CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040var                                                                                                                                                             char\040\040PRIMARY\040KEY,metraz\040int\040UNSIGNED,wlasciciel\040int,FOREIGN\0                                                                                                                                                             40KEY\040id_wlasciciel\040REFERENCES\040postac(`id_postaci`));
+CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040var                                                                                                                                                             char\040\040PRIMARY\040KEY,metraz\040int\040UNSIGNED,wlasciciel\040int,FOREIGN\0                                                                                                                                                             40KEY\040wlasciciel\040REFERENCES\040postac(id_postaci));
+CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040var                                                                                                                                                             char\040\040PRIMARY\040KEY,metraz\040int\040UNSIGNED,wlasciciel\040int,FOREIGN\0                                                                                                                                                             40KEY(wlasciciel)\040REFERENCES\040postac(id_postaci));
+CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040var                                                                                                                                                             char\040\040PRIMARY\040KEY,metraz\040int\040UNSIGNED,wlasciciel\040int,FOREIGN\0                                                                                                                                                             40KEY(`wlasciciel`)\040REFERENCES\040postac(`id_postaci`));
+CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040var                                                                                                                                                             char\040\040PRIMARY\040KEY,metraz\040int\040UNSIGNED,wlasciciel\040int,FOREIGN\0                                                                                                                                                             40KEY(wlasciciel)\040REFERENCES\040postac(id_postaci));
+CREATE\040TABLE\040izba(adres_budynku\040int\040Primary\040KEY,nazwa_izby\040var                                                                                                                                                             char\040\040PRIMARY\040KEY,\040metraz\040int\040UNSIGNED,\040wlasciciel\040int,\                                                                                                                                                             040FOREIGN\040KEY(wlasciciel)\040REFERENCES\040postac(id_postaci));
+CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metra                                                                                                                                                             z\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY(wlasciciel)\040REF                                                                                                                                                             ERENCES\040postac(id_postaci),\040primary\040key(adres_budynku,\040nazwa_izby));
+CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metra                                                                                                                                                             z\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY(`wlasciciel`)\040R                                                                                                                                                             EFERENCES\040postac(`id_postaci`),\040primary\040key(adres_budynku,\040nazwa_izb                                                                                                                                                             y));
+CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metra                                                                                                                                                             z\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY\040(wlasciciel)\04                                                                                                                                                             0REFERENCES\040postac\040(id_postaci),\040primary\040key(adres_budynku,\040nazwa                                                                                                                                                             _izby));
 update\040postac\040set\040\040wiek\040=88\040where\040rodzaj='kobieta';
-CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metraz\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY\040(wlasciciel)\040REFERENCES\040postac\040(id_postaci),\040primary\040key(adres_budynku,\040nazwa_izby));
-CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metraz\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY\040(wlasciciel)\040REFERENCES\040postac(id_postaci),\040primary\040key(adres_budynku,\040nazwa_izby));
-CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metraz\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY(wlasciciel)\040REFERENCES\040postac(id_postaci),\040primary\040key(adres_budynku,\040nazwa_izby));
-ERROR\0401064\040(42000):\040You\040have\040an\040error\040in\040your\040SQL\040syntax;\040check\040the\040manual\040that\040corresponds\040to\040your\040MySQL\040server\040version\040for\040the\040right\040syntax\040to\040use\040near\040',\040metraz\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY(wlasciciel)\040REFERENCES\040postac'\040at\040line\0401
-CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metraz\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY(wlasciciel)\040REFERENCES\040postac(id_postaci),\040primary\040key(adres_budynku,\040nazwa_izby));
-CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar(40),\040metraz\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY(wlasciciel)\040REFERENCES\040postac(id_postaci),\040primary\040key(adres_budynku,\040nazwa_izby));
-ALTER\040TABLE\040izba\040ADD\040kolor\040varchar(20)\040DEFAULT\040'czarny'\040AFTER\040metraz;
+CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metra                                                                                                                                                             z\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY\040(wlasciciel)\04                                                                                                                                                             0REFERENCES\040postac\040(id_postaci),\040primary\040key(adres_budynku,\040nazwa                                                                                                                                                             _izby));
+CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metra                                                                                                                                                             z\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY\040(wlasciciel)\04                                                                                                                                                             0REFERENCES\040postac(id_postaci),\040primary\040key(adres_budynku,\040nazwa_izb                                                                                                                                                             y));
+CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metra                                                                                                                                                             z\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY(wlasciciel)\040REF                                                                                                                                                             ERENCES\040postac(id_postaci),\040primary\040key(adres_budynku,\040nazwa_izby));
+ERROR\0401064\040(42000):\040You\040have\040an\040error\040in\040your\040SQL\040                                                                                                                                                             syntax;\040check\040the\040manual\040that\040corresponds\040to\040your\040MySQL\                                                                                                                                                             040server\040version\040for\040the\040right\040syntax\040to\040use\040near\040',                                                                                                                                                             \040metraz\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY(wlascicie                                                                                                                                                             l)\040REFERENCES\040postac'\040at\040line\0401
+CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar,\040metra                                                                                                                                                             z\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY(wlasciciel)\040REF                                                                                                                                                             ERENCES\040postac(id_postaci),\040primary\040key(adres_budynku,\040nazwa_izby));
+CREATE\040TABLE\040izba(adres_budynku\040int\040,nazwa_izby\040varchar(40),\040m                                                                                                                                                             etraz\040int\040UNSIGNED,\040wlasciciel\040int,\040FOREIGN\040KEY(wlasciciel)\04                                                                                                                                                             0REFERENCES\040postac(id_postaci),\040primary\040key(adres_budynku,\040nazwa_izb                                                                                                                                                             y));
+ALTER\040TABLE\040izba\040ADD\040kolor\040varchar(20)\040DEFAULT\040'czarny'\040                                                                                                                                                             AFTER\040metraz;
 DESC\040izba;
 INSERT\040INTO\040izba\040VALUES(43,)
 \134g
@@ -86,19 +90,19 @@ show\040status;
 quit
 USE\040churas;
 ALTER\040TABLE\040postac\040CHANGE\040'funckja'\040'funkcja'\040VARCHAR(20);
-ALTER\040TABLE\040postac\040RENAME\040COLUMN\040'funckja'\040TO\040'funkcja'\040;
+ALTER\040TABLE\040postac\040RENAME\040COLUMN\040'funckja'\040TO\040'funkcja'\040                                                                                                                                                             ;
 DESC\040postac;
 ALTER\040TABLE\040postac\040RENAME\040COLUMN\040funckja\040TO\040funkcja\040;
 SELECT\040*\040FROM\040postac;
 UPDATE\040postac\040SET\040funkcja='kapitan'\040WHERE\040id_postaci=1;
-ALTER\040TABLE\040postac\040ADD\040COLUMN\040statek\040VARCHAR(20),FOREIGN\040KEY\040(statek)\040REFERENCES\040statek(nazwa_statku)\040\040;
-ALTER\040TABLE\040postac\040ADD\040COLUMN\040statek\040VARCHAR(20),\040ADD\040FOREIGN\040KEY\040(statek)\040REFERENCES\040statek(nazwa_statku)\040;
-UPDATE\040postac\040SET\040statek='drakar'\040WHERE\040id_postaci=\0401\040OR\0402\040OR\0407\040OR\0408;
+ALTER\040TABLE\040postac\040ADD\040COLUMN\040statek\040VARCHAR(20),FOREIGN\040KE                                                                                                                                                             Y\040(statek)\040REFERENCES\040statek(nazwa_statku)\040\040;
+ALTER\040TABLE\040postac\040ADD\040COLUMN\040statek\040VARCHAR(20),\040ADD\040FO                                                                                                                                                             REIGN\040KEY\040(statek)\040REFERENCES\040statek(nazwa_statku)\040;
+UPDATE\040postac\040SET\040statek='drakar'\040WHERE\040id_postaci=\0401\040OR\04                                                                                                                                                             02\040OR\0407\040OR\0408;
 UPDATE\040postac\040SET\040statek='drakar'\040WHERE\040id_postaci=\0401\040;
 SET\040foreign_keeign_key_checks\040=0;
 SET\040foreign_key_checks\040=0;
-UPDATE\040postac\040SET\040statek='drakar'\040WHERE\040id_postaci=\0401\040OR\0402\040OR\0407\040OR\0408;
-UPDATE\040postac\040SET\040statek='knar'\040WHERE\040id_postaci=\0404\040OR\0405\040OR\0406\040;
+UPDATE\040postac\040SET\040statek='drakar'\040WHERE\040id_postaci=\0401\040OR\04                                                                                                                                                             02\040OR\0407\040OR\0408;
+UPDATE\040postac\040SET\040statek='knar'\040WHERE\040id_postaci=\0404\040OR\0405                                                                                                                                                             \040OR\0406\040;
 SET\040foreign_key_checks\040=1;
 SELECT\040*\040izba;
 SELECT\040*\040FROM\040izba;
@@ -118,25 +122,25 @@ SELECT\040*\040FROM\040postac;
 SHOW\040COLUMN\040FROM\040postac;
 DESC\040\040postac;
 SELECT\040*\040FROM\040postac;
-SELECT\040*\040FROM\040postac;\0401\040|\040Bjorn\040\040\040\040|\040wiking\040\040|\0400700-08-20\040|\040\040\04020\040|\040kapitan\040|\040knar\040\040\040|
-|\040\040\040\040\040\040\040\040\040\0402\040|\040Drozd\040\040\040\040|\040ptak\040\040\040\040|\0402018-05-15\040|\040\040\040\0405\040|\040NULL\040\040\040\040|\040knar\040\040\040|
-|\040\040\040\040\040\040\040\040\040\0403\040|\040Tesciowa\040|\040kobieta\040|\0401932-02-02\040|\040\040\04088\040|\040NULL\040\040\040\040|\040knar\040\040\040|
-|\040\040\040\040\040\040\040\040\040\0404\040|\040Olaf\040\040\040\040\040|\040wiking\040\040|\0400812-11-05\040|\040\040\04055\040|\040NULL\040\040\040\040|\040knar\040\040\040|
-|\040\040\040\040\040\040\040\040\040\0405\040|\040BROLAF\040\040\040|\040wiking\040\040|\0400816-01-07\040|\040\040\04051\040|\040NULL\040\040\040\040|\040knar\040\040\040|
-|\040\040\040\040\040\040\040\040\040\0406\040|\040Ulfur\040\040\040\040|\040wiking\040\040|\0400827-07-26\040|\040\040\04075\040|\040NULL\040\040\040\040|\040knar\040\040\040|
-|\040\040\040\040\040\040\040\040\040\0407\040|\040Hydyr\040\040\040\040|\040wiking\040\040|\0400810-04-25\040|\040\040\04085\040|\040NULL\040\040\040\040|\040knar\040\040\040|
-INSERT\040INTO\040postac\040VALUES\040(1,'Bjorn','wiking','700-08-20',20,'kapitan','drakar');
+SELECT\040*\040FROM\040postac;\0401\040|\040Bjorn\040\040\040\040|\040wiking\040                                                                                                                                                             \040|\0400700-08-20\040|\040\040\04020\040|\040kapitan\040|\040knar\040\040\040|
+|\040\040\040\040\040\040\040\040\040\0402\040|\040Drozd\040\040\040\040|\040pta                                                                                                                                                             k\040\040\040\040|\0402018-05-15\040|\040\040\040\0405\040|\040NULL\040\040\040\                                                                                                                                                             040|\040knar\040\040\040|
+|\040\040\040\040\040\040\040\040\040\0403\040|\040Tesciowa\040|\040kobieta\040|                                                                                                                                                             \0401932-02-02\040|\040\040\04088\040|\040NULL\040\040\040\040|\040knar\040\040\                                                                                                                                                             040|
+|\040\040\040\040\040\040\040\040\040\0404\040|\040Olaf\040\040\040\040\040|\040                                                                                                                                                             wiking\040\040|\0400812-11-05\040|\040\040\04055\040|\040NULL\040\040\040\040|\0                                                                                                                                                             40knar\040\040\040|
+|\040\040\040\040\040\040\040\040\040\0405\040|\040BROLAF\040\040\040|\040wiking                                                                                                                                                             \040\040|\0400816-01-07\040|\040\040\04051\040|\040NULL\040\040\040\040|\040knar                                                                                                                                                             \040\040\040|
+|\040\040\040\040\040\040\040\040\040\0406\040|\040Ulfur\040\040\040\040|\040wik                                                                                                                                                             ing\040\040|\0400827-07-26\040|\040\040\04075\040|\040NULL\040\040\040\040|\040k                                                                                                                                                             nar\040\040\040|
+|\040\040\040\040\040\040\040\040\040\0407\040|\040Hydyr\040\040\040\040|\040wik                                                                                                                                                             ing\040\040|\0400810-04-25\040|\040\040\04085\040|\040NULL\040\040\040\040|\040k                                                                                                                                                             nar\040\040\040|
+INSERT\040INTO\040postac\040VALUES\040(1,'Bjorn','wiking','700-08-20',20,'kapita                                                                                                                                                             n','drakar');
 SET\040foreign_key_checks\040=0;
 SELECT\040*\040FROM\040postac;
-INSERT\040INTO\040postac\040VALUES\040(1,'Bjorn','wiking','700-08-20',20,'kapitan','drakar');
-INSERT\040INTO\040postac\040VALUES\040(2,'Drozd','ptak','720-06-22',5,NULL,'drakar');
-INSERT\040INTO\040postac\040VALUES\040(3,'Tesciowa','kobieta','680-01-12',88,NULL,NULL);
-INSERT\040INTO\040postac\040VALUES\040(4,'Olaf','wiking','720-06-5',65,NULL,'drakar');
-INSERT\040INTO\040postac\040VALUES\040(5,'Brolaf','wiking','715-02-23',45,NULL,'drakar');
-INSERT\040INTO\040postac\040VALUES\040(6,'ULFUR','wiking','725-03-16',35,NULL,'knar');
-INSERT\040INTO\040postac\040VALUES\040(7,'HYDYR','wiking','730-07-6',23,NULL,'knar');
+INSERT\040INTO\040postac\040VALUES\040(1,'Bjorn','wiking','700-08-20',20,'kapita                                                                                                                                                             n','drakar');
+INSERT\040INTO\040postac\040VALUES\040(2,'Drozd','ptak','720-06-22',5,NULL,'drak                                                                                                                                                             ar');
+INSERT\040INTO\040postac\040VALUES\040(3,'Tesciowa','kobieta','680-01-12',88,NUL                                                                                                                                                             L,NULL);
+INSERT\040INTO\040postac\040VALUES\040(4,'Olaf','wiking','720-06-5',65,NULL,'dra                                                                                                                                                             kar');
+INSERT\040INTO\040postac\040VALUES\040(5,'Brolaf','wiking','715-02-23',45,NULL,'                                                                                                                                                             drakar');
+INSERT\040INTO\040postac\040VALUES\040(6,'ULFUR','wiking','725-03-16',35,NULL,'k                                                                                                                                                             nar');
+INSERT\040INTO\040postac\040VALUES\040(7,'HYDYR','wiking','730-07-6',23,NULL,'kn                                                                                                                                                             ar');
 SELECT\040*\040FROM\040postac;
-INSERT\040INTO\040postac\040VALUES\040(8,'Thor','wiking','732-06-26',70,NULL,'knar');
+INSERT\040INTO\040postac\040VALUES\040(8,'Thor','wiking','732-06-26',70,NULL,'kn                                                                                                                                                             ar');
 SET\040foreign_key_checks\040=1;
 SELECT\040*\040FROM\040postac;
 SET\040foreign_key_checks\040=0;
@@ -152,3 +156,140 @@ ALTER\040TABLE\040postac\040DROP\040PRIMARY\040KEY;
 ALTER\040postac\040DROP\040FOREIGN\040KEY\040statek;
 ALTER\040TABLE\040postac\040DROP\040FOREIGN\040KEY\040statek;
 quit
+use\040churas;
+show\040tables;
+desc\040postac;
+SELECT\040*\040FROM\040postac;
+ALTER\040TABLE\040POSTAC\040DROP\040PRIMARY\040KEY\040id_postaci;\040
+ALTER\040TABLE\040postac\040DROP\040PRIMARY\040KEY\040id_postaci;
+ALTER\040TABLE\040postac\040DROP\040PRIMARY\040KEY\040'id_postaci';
+ALTER\040TABLE\040postac\040DROP\040PRIMARY\040KEY;
+ALTER\040TABLE\040postac\040DROP\040PRIMARY\040KEY,CHANGE\040id_postaci\040id_po                                                                                                                                                             staci\040int;
+ALTER\040TABLE\040postac\040DROP\040FOREIGN\040KEY\040statek;
+ALTER\040TABLE\040postac\040DROP\040FOREIGN\040KEY\040'statekd';
+ALTER\040TABLE\040postac\040DROP\040FOREIGN\040KEY\040statek;
+show\040tables;
+desc\040walizka;
+ALTER\040TABLE\040walizka\040DROP\040FOREIGN\040KEY\040id_wlasciciela;
+desc\040przetwory;
+desc\040statek;
+ALTER\040TABLE\040postac\040DROP\040PRIMARY\040KEY,CHANGE\040id_postaci\040id_po                                                                                                                                                             staci\040int;
+Cannot\040drop\040index\040'PRIMARY':\040needed\040in\040a\040foreign\040key\040                                                                                                                                                             constraint
+/c
+SHOW\040postac;
+SELECT\040*\040FROM\040postac;
+ALTER\040TABLE\040postac\040DROP\040FOREIGN\040KEY\040statek;
+ALTER\040TABLE\040postac\040DROP\040FOREIGN\040KEY\040`statek`;
+ALTER\040TABLE\040postac\040DROP\040FOREIGN\040KEY\040statek;
+\040Can't\040DROP\040'statek';\040check\040that\040column/key\040exists
+SHOW\040postac\040course;
+SHOW\040CREATE\040TABLE\040\040course;
+SHOW\040CREATE\040TABLE\040\040postac;
+SHOW\040tables;
+ALTER\040TABLE\040postac\040DROP\040FOREIGN\040KEY\040statek;
+ALTER\040TABLE\040postac\040DROP\040FOREIGN\040KEY;
+ALTER\040TABLE\040postac\040DROP\040FOREIGN\040KEY\040statek;
+SHOW\040tables;
+SHOW\040CREATE\040TABLE\040\040postac;
+ALTER\040TABLE\040postac\040DROP\040FOREIGN\040KEY\040postac_ibfk_1;
+ALTER\040TABLE\040postac\040DROP\040PRIMARY\040KEY,CHANGE\040id_postaci\040id_po                                                                                                                                                             staci\040int;
+SHOW\040CREATE\040TABLE\040\040postac;
+ALTER\040TABLE\040postac\040DROP\040PRIMARY\040KEY,CHANGE\040id_postaci\040id_po                                                                                                                                                             staci\040int;
+ALTER\040TABLE\040postac\040CHANGE\040id_postaci\040id_postaci\040int,DROP\040PI                                                                                                                                                             MARY\040KEY;
+ALTER\040TABLE\040postac\040DROP\040PRIMARY\040KEY,CHANGE\040id_postaci\040id_po                                                                                                                                                             staci\040int;
+SHOW\040CREATE\040TABLE\040\040prztwory;
+SHOW\040CREATE\040TABLE\040\040przetwory;
+ALTER\040TABLE\040postac\040DROP\040FOREIGN\040KEY\040prztwory_ibfk_1;
+ALTER\040TABLE\040postac\040DROP\040FOREIGN\040KEY\040przetwory_ibfk_1;
+ALTER\040TABLE\040przetwory\040DROP\040FOREIGN\040KEY\040przetwory_ibfk_1;
+ALTER\040TABLE\040przetwory\040DROP\040FOREIGN\040KEY\040przetwory_ibfk_2;
+ALTER\040TABLE\040statek\040DROP\040FOREIGN\040KEY\040statek_ibfk_1;
+SHOW\040CRATE\040statek;
+SHOW\040CREATE\040statek;
+SHOW\040CREATE\040table\040statek;
+ALTER\040TABLE\040postac\040DROP\040PRIMARY\040KEY,CHANGE\040id_postaci\040id_po                                                                                                                                                             staci\040int;
+SHOW\040tables;
+ALTER\040TABLE\040walizka\040DROP\040FOREIGN\040KEY\040walizka_ibfk_1;
+ALTER\040TABLE\040postac\040DROP\040PRIMARY\040KEY,CHANGE\040id_postaci\040id_po                                                                                                                                                             staci\040int;
+ALTER\040TABLE\040postac\040ADD\040pesel\040varchar(11)\040PRIMARY\040KEY;
+ALTER\040TABLE\040postac\040ADD\040pesel\040varchar(11)\040,ADD\040PRIMARY\040KE                                                                                                                                                             Y(pesel);
+ALTER\040TABLE\040postac\040ADD\040pesel\040varchar(11)\040;
+ALTER\040TABLE\040postac\040ADD\040PRIMARY\040KEY\040(pesel)\040;
+SELECT\040*\040FROM\040postac;
+UPDATE\040postac\040SET\040pesel='35646575312'\040WHERE\040id_postaci=1;
+UPDATE\040postac\040SET\040pesel='654765453643'\040WHERE\040id_postaci=2;
+UPDATE\040postac\040SET\040pesel='65476545364'\040WHERE\040id_postaci=2;
+UPDATE\040postac\040SET\040pesel='65454334523'\040WHERE\040id_postaci=3;
+UPDATE\040postac\040SET\040pesel='65454336544'\040WHERE\040id_postaci=5;
+UPDATE\040postac\040SET\040pesel='65454336764'\040WHERE\040id_postaci=6;
+UPDATE\040postac\040SET\040pesel='65454334577'\040WHERE\040id_postaci=7;
+ALTER\040TABLE\040postac\040ADD\040PRIMARY\040KEY\040(pesel)\040;
+DESC\040postac;
+ALTER\040TABLE\040postac\040CHANGE\040rodzaj\040rodzaj\040enum('wiking','ptak','                                                                                                                                                             kobieta','syrena');
+DESC\040postac;
+ALTER\040TABLE\040postac\040DROP\040id_postaci;
+INSERT\040INTO\040postac\040VALUES('syrena',600-05-01,200,null,null,89057687623)                                                                                                                                                             ;
+DESC\040postac;
+INSERT\040INTO\040postac\040VALUES('Gertruda\040Nieszczera','syrena',600-05-01,2                                                                                                                                                             00,null,null,89057687623);
+INSERT\040INTO\040postac\040VALUES('Gertruda\040Nieszczera','syrena',700-05-01,2                                                                                                                                                             00,null,null,89057687623);
+INSERT\040INTO\040postac\040VALUES('Gertruda\040Nieszczera','syrena',700-05-03,2                                                                                                                                                             00,null,null,89057687623);
+INSERT\040INTO\040postac\040VALUES('Gertruda\040Nieszczera','syrena',800-05-03,2                                                                                                                                                             00,null,null,89057687623);
+INSERT\040INTO\040postac\040VALUES('Gertruda\040Nieszczera','syrena',1900-05-03,                                                                                                                                                             200,null,null,89057687623);
+INSERT\040INTO\040postac\040VALUES('Gertruda\040Nieszczera','syrena',1950-05-03,                                                                                                                                                             200,null,null,89057687623);
+INSERT\040INTO\040postac\040VALUES('Gertruda\040Nieszczera','syrena','700-05-03,                                                                                                                                                             200',null,null,89057687623);
+desc\040postac;
+INSERT\040INTO\040postac\040VALUES('Gertruda\040Nieszczera','syrena','700-05-03'                                                                                                                                                             ,200,null,null,89057687623);
+SELECT\040*\040FROM\040postac;
+desc\040statek;
+UPDATE\040postac\040SET\040statek='drakar'\040WHERE\040nazwa='%a%';
+DESC\040statek;
+UPDATE\040statek\040SET\040max_ladownosc\040*\0400,7;
+UPDATE\040statek\040SET\040max_ladownosc=\040max_ladownosc\040*\0400,7;
+UPDATE\040statek\040SET\040max_ladownosc=\040max_ladownosc\040*\0400.7;
+UPDATE\040statek\040SET\040max_ladownosc=\040max_ladownosc\040*\0400.7\040WHERE\                                                                                                                                                             040data_wodowanialike\040'2___%';
+UPDATE\040statek\040SET\040max_ladownosc=\040max_ladownosc\040*\0400.7\040WHERE\                                                                                                                                                             040data_wodowanialike\0402___%;
+UPDATE\040statek\040SET\040max_ladownosc=\040max_ladownosc\040*\0400.7\040WHERE\                                                                                                                                                             040data_wodowanialike\040'2_%';
+UPDATE\040statek\040SET\040max_ladownosc=\040max_ladownosc\040*\0400.7\040WHERE\                                                                                                                                                             040data_wodowanialike\040'2%';
+UPDATE\040statek\040SET\040max_ladownosc=\040max_ladownosc\040*\0400.7\040WHERE\                                                                                                                                                             040data_wodowani=\040'2___%';
+UPDATE\040statek\040SET\040max_ladownosc=\040max_ladownosc\040*\0400.7\040WHERE\                                                                                                                                                             040data_wodowania=\040'2___%';
+UPDATE\040statek\040SET\040max_ladownosc=\040max_ladownosc\040*\0400.7\040WHERE\                                                                                                                                                             040data_wodowania=\040'2%';
+UPDATE\040statek\040SET\040max_ladownosc=\040max_ladownosc\040*\0400.7\040WHERE\                                                                                                                                                             040data_wodowania='2%-%-%';
+UPDATE\040statek\040SET\040max_ladownosc=\040max_ladownosc\040*\0400.7\040WHERE\                                                                                                                                                             040data_wodowania\040>='2000-01-1';
+use\040churas;
+show\040databases;
+use\040churas;
+show\040tables;
+DESC\040postac;
+SELECT\040*\040FROM\040postac\040WHERE\040wiek<1000;
+ALTER\040TABLE\040ALTER\040COLUMN\040rodzaj\040enum('ptak','waz','wiking','kobie                                                                                                                                                             ta','syrena');
+ALTER\040TABLE\040ALTER\040COLUMN\040rodzaj\040rodzaj\040enum('ptak','waz','wiki                                                                                                                                                             ng','kobieta','syrena');
+ALTER\040TABLE\040postac\040ALTER\040COLUMN\040rodzaj\040rodzaj\040enum('ptak','                                                                                                                                                             waz','wiking','kobieta','syrena');
+ALTER\040TABLE\040postac\040ALTER\040COLUMN\040rodzaj\040\040enum('ptak','waz','                                                                                                                                                             wiking','kobieta','syrena');
+ALTER\040TABLE\040postac\040MODIFY\040COLUMN\040rodzaj\040\040ENUM('ptak','waz',                                                                                                                                                             'wiking','kobieta','syrena');
+DESC\040postac;
+SELECT\040*\040FROM\040postac;
+INSTERT\040INTO\040postac\040VALUES('Loko','waz','500-3-2',400,NULL,NULL,4326786                                                                                                                                                             7512);
+INSERT\040INTO\040postac\040VALUES('Loko','waz','500-3-2',400,NULL,NULL,43267867                                                                                                                                                             512);
+CREATE\040TABLE\040Marynarz\040LIKE\040postac;
+DESC\040marynarz;
+DESC\040Marynarz;
+INSTERT\040INTO\040Marynarz\040SELECT\040*\040FROM\040postac\040WHERE\040statek\                                                                                                                                                             040IS\040NOT\040NULL;
+INSERT\040INTO\040Marynarz\040SELECT\040*\040FROM\040postac\040WHERE\040statek\0                                                                                                                                                             40IS\040NOT\040NULL;
+SELECT\040*\040FROM\040Marynarz;
+SELECT\040*\040FROM\040Marynarz\040WHERE\040statek\040IS\040NOT\040NULL\040SET\0                                                                                                                                                             40statek\040=\040NULL;
+UPDATE\040Marynarz\040SET\040statek=NULL\040WHERE\040statek\040IS\040NOT\040NULL                                                                                                                                                             ;
+SELECT\040*\040FROM\040Marynarz;
+DELETE\040FROM\040Marynarz\040WHERE\040nazwa='Brolaf';
+SELECT\040*\040FROM\040Marynarz;
+DELETE\040FROM\040statek\040;
+DROP\040statek;
+DROP\040TABLE\040statek;
+CREATE\040TABLE\040zwierz(id\040INT\040PRIMARY\040KEY\040AUTO_INCREMENT,\040nazw                                                                                                                                                             a\040VARCHAR(50),wiek\040INT);
+INSERT\040INTO\040zwierz\040SELECT\040*\040FROM\040postac\040WHERE\040rodzaj='pt                                                                                                                                                             ak'\040OR\040rodzaj='waz';
+INSERT\040INTO\040zwierz\040SELECT\040nazwa,wiek\040\040FROM\040postac\040WHERE\                                                                                                                                                             040rodzaj='ptak'\040OR\040rodzaj='waz';
+INSERT\040INTO\040zwierz(nazwa,wiek)\040SELECT\040nazwa,wiek\040\040FROM\040post                                                                                                                                                             ac\040WHERE\040rodzaj='ptak'\040OR\040rodzaj='waz';
+SELETCT\040*\040FROM\040zwierz;
+SELECT\040*\040FROM\040zwierz;
+quit
+
+
