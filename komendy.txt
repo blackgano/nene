@@ -291,5 +291,106 @@ INSERT\040INTO\040zwierz(nazwa,wiek)\040SELECT\040nazwa,wiek\040\040FROM\040post
 SELETCT\040*\040FROM\040zwierz;
 SELECT\040*\040FROM\040zwierz;
 quit
+use\040churas;
+SHOW\040databases;
+USE\040wikingowie;
+SHOW\040tables;
+CREATE\040TABLE\040churas(kreatura)\040LIKE\040wikingowie(kreatura);\040
+CREATE\040TABLE\040churas.kreatura\040LIKE\040wikingowie.kreatura;
+INSERT\040postac.kreatura\040SELECT\040*\040FROM\040wikingowie.kreatura;
+INSERT\040INTO\040postac.kreatura\040SELECT\040*\040FROM\040wikingowie.kreatura;
+CREATE\040TABLE\040churas.zasob\040LIKE\040wikingowie.zasob;
+CREATE\040TABLE\040churas.ekwipunek\040LIKE\040wikingowie.ekwipunek;
+INSERT\040INTO\040postac.kreatura\040SELECT\040*\040FROM\040wikingowie.kreatura;
+INSERT\040INTO\040churas.kreatura\040SELECT\040*\040FROM\040wikingowie.kreatura;
+INSERT\040INTO\040churas.zasob\040SELECT\040*\040FROM\040wikingowie.zasob;
+INSERT\040INTO\040churas.ekwipunek\040SELECT\040*\040FROM\040wikingowie.ekwipunek;
+USE\040churas;
+SELECT\040*\040FROM\040zasob;
+SELECT\040*\040FROM\040zasob\040WHERE\040rodzaj=jedzenie;
+SELECT\040*\040FROM\040zasob\040WHERE\040rodzaj='jedzenie';
+SELECT\040'idZasobu','ilosc'\040FROM\040zasob\040WHERE\040kreatura.id=1\040OR\040kreatura.id                                                                                                                                                 =3OR\040kreatura=5;
+DESC\040kreatura;
+SELECT\040'idZasobu','ilosc'\040FROM\040zasob\040WHERE\040kreatura.idKreatury=1\040OR\040kre                                                                                                                                                 atura.idKreatury=3\040OR\040kreatura.idKreatury=5;
+SELECT\040*FROM\040kreatura;;
+SELECT\040*FROM\040kreatura;
+DESC\040ekwipunek;
+SELECT\040'idZasobu','ilosc'\040FROM\040zasob\040WHERE\040ekwipunek.idKREATURY\040in(1,3,5);                                                                                                                                                 \040
+SELECT\040'idZasobu','ilosc','id.Kreatury'\040FROM\040zasob,ekwipunek\040WHERE\040ekwipunek.                                                                                                                                                 idKREATURY\040in(1,3,5);
+SELECT\040'zasob.idZasobu','zasob.ilosc','ekwipunek.idKreatury','ekwipunek.id.Zasobu'\040FRO                                                                                                                                                 M\040zasob,ekwipunek\040WHERE\040ekwipunek.idKREATURY\040in(1,3,5);
+SELECT\040'zasob.idZasobu','zasob.ilosc'FROM\040zasob,ekwipunek\040WHERE\040ekwipunek.idKREA                                                                                                                                                 TURY\040in(1,3,5);
+SELECT\040'zasob.idZasobu','zasob.ilosc'FROM\040zasob,ekwipunek\040WHERE\040ekwipunek.idKREA                                                                                                                                                 TURY\040in=1;
+SELECT\040'zasob.idZasobu','zasob.ilosc'FROM\040zasob,ekwipunek\040WHERE\040ekwipunek.idKREA                                                                                                                                                 TURY=1;
+SELECT\040'zasob.idZasobu','zasob.ilosc'\040FROM\040zasob,ekwipunek\040WHERE\040ekwipunek.id                                                                                                                                                 KREATURY=in(1,3,5)\040AND\040ekwipunek.idZasobu=zasob.idZasobu;
+SELECT\040'zasob.idZasobu','zasob.ilosc'\040FROM\040zasob,ekwipunek\040WHERE\040ekwipunek.id                                                                                                                                                 KREATURY\040in(1,3,5)\040AND\040ekwipunek.idZasobu=zasob.idZasobu;
+SELECT\040'zasob.idZasobu','zasob.ilosc'\040FROM\040zasob;\040
+SELECT\040zasob.idZasobu,zasob.ilosc\040FROM\040zasob;
+SELECT\040zasob.idZasobu,zasob.ilosc\040FROM\040zasob,ekwipunek\040WHERE\040ekwipunek.idKREA                                                                                                                                                 TURY\040in(1,3,5)\040AND\040ekwipunek.idZasobu=zasob.idZasobu;
+SELECT\040zasob.idZasobu,zasob.ilosc,ekwipunek.idKreatury\040FROM\040zasob,ekwipunek\040WHER                                                                                                                                                 E\040ekwipunek.idKREATURY\040in(1,3,5)\040AND\040ekwipunek.idZasobu=zasob.idZasobu;
+DESC\040kreatury;
+DESC\040kreatura;
+SELECT\040*\040FROM\040kreatura\040WHERE\040udzwig=>50\040AND\040rodzaj\040IS\040NOT\040'wie                                                                                                                                                 dzma';
+SELECT\040*\040FROM\040kreatura\040WHERE\040udzwig>=50\040AND\040rodzaj\040IS\040NOT\040'wie                                                                                                                                                 dzma';
+SELECT\040*\040FROM\040kreatury;
+SELECT\040*\040FROM\040kreatura;
+SELECT\040*\040FROM\040kreatura\040WHERE\040udzwig>=50\040AND\040rodzaj\040IS\040NOT\040='wi                                                                                                                                                 edzma';
+SELECT\040*\040FROM\040kreatura\040WHERE\040udzwig>=50\040AND\040rodzaj\040=!'wiedzma';
+SELECT\040*\040FROM\040kreatura\040WHERE\040udzwig>=50\040AND\040rodzaj\040<>'wiedzma';
+SELECT\040*\040FROM\040kreatury\040WHERE\040nazwa\040LIKE\040'%or%'\040AND\040udzwig\040BETW                                                                                                                                                 EEN\04030\040AND\04070;
+SELECT\040*\040FROM\040kreatura\040WHERE\040nazwa\040LIKE\040'%or%'\040AND\040udzwig\040BETW                                                                                                                                                 EEN\04030\040AND\04070;
+DESC\040zasob;
+SELECT\040*\040FROM\040zasob;
+SELECT\040*\040FROM\040zasob\040WHERE\040dataPozyskania\040IN\040MONTH(7,8);
+SELECT\040*\040FROM\040zasob\040WHERE\040dataPozyskania\040LIKE\040'%%.9.%%';
+SELECT\040*\040FROM\040zasob\040WHERE\040dataPozyskania\040LIKE\040'%%.08.%%';
+SELECT\040*\040FROM\040zasob\040WHERE\040dataPozyskania=\040'%%.08.%%';
+SELECT\040*\040FROM\040zasob\040WHERE\040dataPozyskania\040LIKE\040'%%.08.%%';
+SELECT\040*\040FROM\040zasob\040WHERE\040month(dataPozyskania)=9;\040;
+SELECT\040*\040FROM\040zasob\040WHERE\040month(dataPozyskania)=9;\040
+SELECT\040*\040FROM\040zasob\040WHERE\040month(dataPozyskania)=7\040OR\0408;
+SELECT\040*\040FROM\040zasob\040WHERE\040month(dataPozyskania)=07\040OR\04008;
+SELECT\040*\040FROM\040zasob\040WHERE\040month(dataPozyskania)=07\040;
+SELECT\040*\040FROM\040zasob\040WHERE\040month(dataPozyskania)\040IN(7,8)\040;
+SELECT\040*\040FROM\040zasob\040WHERE\040rodzaj\040IS\040NOT\040NULL\040SORT\040BY\040ASC;
+SELECT\040*\040FROM\040zasob\040WHERE\040rodzaj\040IS\040NOT\040NULL\040ORDER\040BY\040ASC;
+SELECT\040*\040FROM\040zasob\040WHERE\040rodzaj\040IS\040NOT\040NULL\040ORDER\040BY\040waga\                                                                                                                                                 040ASC;
+SELECT\040*\040FROM\040kreatura\040LIMIT\0405\040ORDER\040BY\040dataUr\040DESC;\040\040
+SELECT\040*\040FROM\040kreatura\040\040ORDER\040BY\040dataUr\040DESC;\040
+SELECT\040*\040FROM\040kreatura\040\040ORDER\040BY\040dataUr\040DESC\040LIMIT\0405;
+SELECT\040*\040FROM\040kreatura\040\040ORDER\040BY\040dataUr\040ASC\040LIMIT\0405;
+SELECT\040DISTINCT\040*\040FROM\040zasob;\040
+SELECT\040DISTINCT\040*\040FROM\040zasob\040ORDER\040BY\040rodzaj;
+SELECT\040DISTINCT\040*\040FROM\040zasob\040GROUP\040BY\040rodzaj;
+SELECT\040\040*\040FROM\040zasob\040GROUP\040BY\040rodzaj;
+SELECT\040\040*\040FROM\040zasob\040GROUP\040BY\040(rodzaj);
+SELECT\040\040rodzaj\040FROM\040zasob\040GROUP\040BY\040(rodzaj);
+SELECT\040nazwa,\040GROUP_CONCAT(rodzaj\040SEPARATOR',')\040FROM\040kreatura\040WHERE\040rod                                                                                                                                                 zaj\040LIKE\040'wi%';
+SELECT\040nazwa,\040GROUP_CONCAT(rodzaj\040SEPARATOR',')\040FROM\040kreatura\040WHERE\040rod                                                                                                                                                 zaj\040LIKE\040'wi%'GROUP\040BY\040nazwa;
+SELECT\040nazwa,\040rodzaj\040FROM\040kreatura\040WHERE\040rodzaj\040LIKE\040'wi%";
+\^C
+SELECT\040nazwa,\040rodzaj\040FROM\040kreatura\040WHERE\040rodzaj\040LIKE\040'wi%";
+\^C
+SELECT\040nazwa,\040rodzaj\040FROM\040kreatura\040WHERE\040rodzaj\040LIKE\040'wi%";;
+SELECT\040nazwa,\040GROUP_CONCAT(rodzaj\040SEPARATOR',')\040FROM\040kreatura\040WHERE\040rod                                                                                                                                                 zaj\040LIKE\040'wi%'GROUP\040BY\040nazwa;
+SELECT\040nazwa,\040rodzaj\040FROM\040kreatura\040WHERE\040rodzaj\040LIKE\040'wi%;;
+SELECT\040nazwa,\040rodzaj\040FROM\040kreatura\040WHERE\040rodzaj\040LIKE\040'wi%';
+SELECT\040nazwa,\040GROP_CONCAT(rodzaj)\040FROM\040kreatura\040WHERE\040rodzaj\040LIKE\040'w                                                                                                                                                 i%';
+SELECT\040nazwa,\040GROUP_CONCAT(rodzaj)\040FROM\040kreatura\040WHERE\040rodzaj\040LIKE\040'                                                                                                                                                 wi%';
+SELECT\040GROUP_CONCAT(nazwa),\040rodzaj\040FROM\040kreatura\040WHERE\040rodzaj\040LIKE\040'                                                                                                                                                 wi%';
+SELECT\040GROUP_CONCAT(nazwa),\040rodzaj\040FROM\040kreatura\040WHERE\040rodzaj\040LIKE\040'                                                                                                                                                 wi%'\040GROUP\040BY\040idZasobu;
+SELECT\040idZasobu,GROUP_CONCAT(nazwa),\040rodzaj\040FROM\040kreatura\040WHERE\040rodzaj\040                                                                                                                                                 LIKE\040'wi%'\040GROUP\040BY\040idZasobu;
+SELECT\040idKreatury,GROUP_CONCAT(nazwa),\040rodzaj\040FROM\040kreatura\040WHERE\040rodzaj\0                                                                                                                                                 40LIKE\040'wi%'\040GROUP\040BY\040idKreatury;
+SELECT\040GROUP_CONCAT(nazwa),\040rodzaj\040FROM\040kreatura\040WHERE\040rodzaj\040LIKE\040'                                                                                                                                                 wi%'\040GROUP\040BY\040idKreatury;
+SELECT\040nazwa,\040rodzaj\040FROM\040kreatura\040WHERE\040rodzaj\040LIKE\040'wi%';
+SELECT\040nazwa\040AS\040nazwa-rodzaj,\040rodzaj\040AS\040nazwa-rodzaj\040FROM\040kreatura\0                                                                                                                                                 40WHERE\040rodzaj\040LIKE\040'wi%';
+SELECT\040nazwa\040AS\040'nazwa-rodzaj',\040rodzaj\040AS\040'nazwa-rodzaj'\040FROM\040kreatu                                                                                                                                                 ra\040WHERE\040rodzaj\040LIKE\040'wi%';
+SELECT\040nazwa\040AS\040'nazwa-rodzaj',\040rodzaj\040AS\040'nazwa-rodzaj'\040FROM\040kreatu                                                                                                                                                 ra\040WHERE\040rodzaj\040LIKE\040'wi%'\040UNION\040all;
+SELECT\040nazwa\040AS\040'nazwa-rodzaj'FROM\040kreatura\040UNION\040ALL\040select\040rodzaj\                                                                                                                                                 040AS\040'nazwa-rodzaj'\040FROM\040kreatura\040WHERE\040rodzaj\040LIKE\040'wi%';
+SELECT\040nazwa\040AS\040'nazwa-rodzaj',\040rodzaj\040AS\040'nazwa-rodzaj'\040FROM\040kreatu                                                                                                                                                 ra\040WHERE\040rodzaj\040LIKE\040'wi%';
+SELECT\040CONCAT(nazwa,\040rodzaj)\040FROM\040kreatura\040WHERE\040rodzaj\040LIKE\040'wi%';
+SELECT\040CONCAT(nazwa,\040rodzaj)\040AS\040nazwa-rodzaj\040FROM\040kreatura\040WHERE\040rod                                                                                                                                                 zaj\040LIKE\040'wi%';
+SELECT\040CONCAT(nazwa,\040rodzaj)\040AS\040'nazwa-rodzaj'\040FROM\040kreatura\040WHERE\040r                                                                                                                                                 odzaj\040LIKE\040'wi%';
+SELECT\040CONCAT(nazwa,'-'\040,rodzaj)\040AS\040'nazwa-rodzaj'\040FROM\040kreatura\040WHERE\                                                                                                                                                 040rodzaj\040LIKE\040'wi%';
+quit
 
 
